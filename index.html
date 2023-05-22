@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celebrare</title>
+  <link rel="stylesheet" href="./index.css">
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+  var upload = document.getElementById("image");
+  var preview = document.getElementById("preview");
+
+  upload.addEventListener("change", function(event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      preview.innerHTML = '<img src="' + e.target.result + '" style="height:12cm"/>';
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+    </script>
+</head>
+<body>
+    <nav>
+            <h2>Add image / Icon</h2>
+    </nav>
+<div class="container">
+    <h4>Upload image</h4>
+    <div class="conti">
+        <label for="image" class="label">
+            <input type="file" id="image" accept="image/*">
+            choose from device
+        </label>
+    </div>
+</div>
+    </div>
+    <div id="preview"></div>
+  </body>
+  </html>
